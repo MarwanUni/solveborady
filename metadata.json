@@ -1,0 +1,6 @@
+{
+  "name": "Lecture Scratchpad",
+  "description": "Keyboard-first video lecture workspace and live electrical engineering equation scratchpad with KaTeX rendering, Soulver-style calculator, and Gaussian elimination solver.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
