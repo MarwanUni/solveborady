@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture Scratchpad</title>
+    <meta name="description" content="Keyboard-first video lecture workspace and live electrical engineering equation scratchpad with KaTeX rendering, Soulver-style calculator, and Gaussian elimination solver." />
+    <meta property="og:title" content="Lecture Scratchpad" />
+    <meta property="og:description" content="Keyboard-first video lecture workspace and live electrical engineering equation scratchpad with KaTeX rendering, Soulver-style calculator, and Gaussian elimination solver." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#6d28d9" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Scratchpad" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('lecture-scratchpad-theme');
+          var theme = saved === 'light' || saved === 'dark' ? saved : 'light';
+          if (theme === 'dark') document.documentElement.classList.add('dark');
+          else document.documentElement.classList.remove('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#f7f5fc] text-slate-900 dark:bg-[#0d0917] dark:text-violet-50 antialiased selection:bg-violet-500/30 selection:text-violet-950 dark:selection:text-violet-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  code, pre, kbd, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Clear visible keyboard focus outlines in purple */
+  *:focus-visible {
+    outline: 2px solid #7c3aed;
+    outline-offset: 2px;
+  }
+
+  .dark *:focus-visible {
+    outline-color: #a78bfa;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* KaTeX sizing inside compact notebook lines */
+.katex-line .katex {
+  font-size: 1.05em;
+}
+
+.katex-solver .katex {
+  font-size: 1.02em;
+}
+
+/* Subtle purple wavy surface grid for handwriting & solver panels */
+.purple-wave-surface {
+  background-color: #faf8ff;
+  background-image:
+    radial-gradient(rgba(124, 58, 237, 0.16) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(139, 92, 246, 0.05) 0%, rgba(168, 85, 247, 0) 45%);
+  background-size: 20px 20px, 100% 100%;
+}
+
+.dark .purple-wave-surface {
+  background-color: #0e0a1a;
+  background-image:
+    radial-gradient(rgba(167, 139, 250, 0.18) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(124, 58, 237, 0.08) 0%, rgba(124, 58, 237, 0) 45%);
+  background-size: 20px 20px, 100% 100%;
+}
+
+@keyframes casio-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.casio-caret {
+  animation: casio-blink 1.05s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-notebook {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+}
